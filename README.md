@@ -49,7 +49,7 @@ DATABASE_URL="mysql://USERNAME:PASSWORD@localhost:3306/DBNAME?schema=public"
 - Push the Prisma Schema into Database
 
 ```
-npx prisma push db
+npx prisma migrate dev
 ```
 
 - Run the development server
