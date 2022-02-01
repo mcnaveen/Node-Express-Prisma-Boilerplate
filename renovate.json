@@ -1,0 +1,20 @@
+{
+    "extends": ["config:base"],
+    "automerge": true,
+    "major": {
+      "automerge": false
+    },
+    "lockFileMaintenance": {
+      "enabled": false,
+      "automerge": false
+    },
+    "node": {
+      "supportPolicy": ["lts_active"]
+    },
+    "labels": ["renovate"],
+    "rangeStrategy": "bump",
+    "bumpVersion": null,
+    "semanticCommits": true,
+    "timezone": "Asia/Kolkata",
+    "schedule": "on saturday and sunday"
+  }

@@ -1,0 +1,31 @@
+### GET
+// Get all the users
+GET http://localhost:4000/users
+
+### GET
+// Get single user by id
+GET http://localhost:4000/users/1
+
+### POST
+// Create a new user
+POST http://localhost:4000/users
+Content-Type: application/json
+
+{
+  "name": "john",
+  "email": "john@gmail.com"
+}
+
+### PATCH
+// Update a user
+PATCH http://localhost:4000/users/1
+Content-Type: application/json
+
+{
+  "name": "newjohn",
+  "email": "john@gmail.com"
+}
+
+### DELETE
+// Delete a user
+DELETE http://localhost:4000/users/1
