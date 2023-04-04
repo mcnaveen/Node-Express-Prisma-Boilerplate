@@ -65,7 +65,7 @@ app.patch('/users/:id', async (req: Request, res: Response) => {
 // This is the Route for deleting a user via DELETE Method
 app.delete('/users/:id', async (req: Request, res: Response) => {
     const { id } = req.params;
-    const user = await prisma.user.delete({
+    await prisma.user.delete({
         where: {
             id: Number(id)
         }
