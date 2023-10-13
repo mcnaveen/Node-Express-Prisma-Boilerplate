@@ -9,7 +9,7 @@
     "build": "tsc -p ."
   },
   "devDependencies": {
-    "@types/express": "^4.17.18",
+    "@types/express": "^4.17.19",
     "@types/node": "^18.18.1",
     "nodemon": "^3.0.1",
     "prisma": "^5.3.1",
