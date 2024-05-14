@@ -8,13 +8,54 @@ datasource db {
 }
 
 model user {
-  id     Int         @id @default(autoincrement())
-  name   String      @db.VarChar(99)
-  email  String      @db.VarChar(99)
-  status user_status
+  id           Int           @id @default(autoincrement())
+  name         String        @db.VarChar(99)
+  email        String        @db.VarChar(99)
+  status       user_status
+  declarations Declaration[]
+  weapons      Weapon[]
 }
 
 enum user_status {
   active
   inactive
+}
+
+model Declaration {
+  id              Int      @id @default(autoincrement())
+  image           String
+  assignedTo      String
+  message         String?
+  cnic            String
+  weapon          Weapon   @relation(fields: [weaponId], references: [id])
+  weaponId        Int
+  beltNo          String
+  placement       String
+  declarationDate DateTime
+  retrivalDate    DateTime
+  user            user     @relation(fields: [userId], references: [id])
+  userId          Int
+}
+
+model Weapon {
+  id           Int           @id @default(autoincrement())
+  image        String?
+  weaponId     String
+  type         WeaponType
+  user         user          @relation(fields: [userId], references: [id])
+  userId       Int
+  declarations Declaration[]
+}
+
+enum WeaponType {
+  rifle
+  pistol
+  shotgun
+  smg
+  sniper
+  machinegun
+  knife
+  grenade
+  bomb
+  other
 }
