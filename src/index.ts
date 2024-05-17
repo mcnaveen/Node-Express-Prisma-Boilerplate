@@ -23,6 +23,7 @@ app.post("/weapons", weaponController.create);
 app.get("/weapons", weaponController.getAll);
 app.get("/weapons/:id", weaponController.findById);
 app.put("/weapons/:id", weaponController.update);
+app.get("/search/", weaponController.searchByWeaponId);
 app.delete("/weapons/:id", weaponController.delete);
 
 app.listen(port, () => {

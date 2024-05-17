@@ -33,4 +33,24 @@ export class WeaponService {
   async delete(id: number): Promise<void> {
     await prisma.weapon.delete({ where: { id } });
   }
+
+  async searchBYWeaponId(
+    weaponId: string,
+    page: number = 1,
+    pageSize: number = 10
+  ): Promise<Weapon[]> {
+    const skip = (page - 1) * pageSize;
+
+    const matchingWeapons = await prisma.weapon.findMany({
+      where: {
+        weaponId: {
+          contains: weaponId,
+        },
+      },
+      skip,
+      take: pageSize,
+    });
+
+    return matchingWeapons;
+  }
 }

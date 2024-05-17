@@ -55,4 +55,15 @@ export class WeaponController {
       res.status(500).json({ message: error.message });
     }
   };
+
+  searchByWeaponId = async (req: Request, res: Response) => {
+    try {
+      const weapons = await this.weaponService.searchBYWeaponId(
+        req.query.weaponId as string
+      );
+      res.json(weapons);
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  };
 }
