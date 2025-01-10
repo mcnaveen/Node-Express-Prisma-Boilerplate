@@ -14,7 +14,7 @@
     "nodemon": "^3.1.9",
     "prisma": "^6.0.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.3"
   },
   "dependencies": {
     "@prisma/client": "^6.0.0",
